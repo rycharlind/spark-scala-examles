@@ -1,0 +1,7 @@
+.bsp
+.metals
+.vscode
+.scalafmt.conf
+.env
+project
+target
