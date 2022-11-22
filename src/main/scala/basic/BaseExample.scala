@@ -26,11 +26,15 @@ object BasicExample {
       .join(commentDf, postDf("id") === commentDf("post_id"))
       .select(
         userDf("id").as("user_id"),
+        userDf("name"),
         postDf("id").as("post_id"),
+        postDf("created_at").as("post_date"),
         commentDf("id").as("comment_id"),
+        commentDf("created_at").as("comment_date"),
         postDf("title"),
         commentDf("text")
       )
+      .orderBy("post_date", "comment_date")
 
     out.show()
   }
