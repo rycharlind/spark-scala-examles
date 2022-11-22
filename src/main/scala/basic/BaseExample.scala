@@ -1,11 +1,7 @@
-package example
+package basic
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{SparkSession, DataFrame}
-import org.apache.spark.sql.types.StructType
-
-// A basic Spark on Scala example that shows how to
-// read multiple CSV files, join them up and show the results.
 
 object BasicExample {
   def main(args: Array[String]): Unit = {
@@ -13,7 +9,6 @@ object BasicExample {
     val conf = new SparkConf()
       .setAppName("BasicExample")
       .setMaster("local[*]")
-      .set("spark.sql.session.timeZone", "UTC")
 
     val spark = SparkSession
       .builder()
